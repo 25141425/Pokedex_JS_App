@@ -7,22 +7,33 @@ let pokemonRepository = (function () {
  ];
 
   return {
-    add: function(item) {
-      pokemonList.push(item);
+    add: function(pokemon) {
+      pokemonList.push(pokemon);
     },
     getAll: function() {
       return pokemonList;
+    },
+    addListItem: function(pokemon) {
+      let pokedex = document.querySelector(".pokedex");
+      let listItem = document.createElement("li");
+      let button = document.createElement("button");
+      button.innerText = pokemon.name;
+      button.classList.add("button_class");
+      listItem.appendChild(button);
+      pokedex.appendChild(listItem);
+      button.addEventListener('click', function() { // Using the function "showDetails" to console.log the details of the passed pokemon
+        pokemonRepository.showDetails(pokemon);
+      });
+    },
+    showDetails: function (pokemon) {
+      console.log(pokemon);
     }
+    
   };
 })();
 
 pokemonRepository.add({ name: 'Gloom', height: 0.8, types: ['Grass', 'Poison'], weight: 8.6});
 
-pokemonRepository.getAll().forEach(function(item) {
-  if (item.height > 1.5) {
-    document.write(`<p> ${item.name} (height: ${item.height}) - Wow, that's big! </p>`);
-  }
-  else {
-    document.write(`<p> ${item.name} (height: ${item.height})`);
-  }
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
