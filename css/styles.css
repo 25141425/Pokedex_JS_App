@@ -1,5 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
   margin: 15px;
+}
+
+h1 {
+  font-family: roboto, sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+  color: rgb(108, 106, 106);
+  margin-left: 35px;
+}
+
+.pokedex_container {
+  display: grid;
+  
+}
+
+@media all and (max-width: 300px) {
+  .pokedex_container {
+    grid-template-columns: 1fr;
+    .button_class {
+      width: 200px;
+      font-size: 15px;
+    }
+    h1 {
+      font-size: 25px;
+      margin-left: 30px;
+    }
+  }
+}
+
+.pokedex {
+  list-style-type: none;
+  padding: 0;
+}
+
+.button_class {
+  width: 300px;
+  font-family: roboto, sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: white;
+  border-style: none;
+  border-radius: 30px;
+  background-color: rgb(127, 192, 230);
+  margin: 5px;
+  padding: 20px;
+  text-align: left;
+  
+}
+
+.button_class:hover {
+  cursor: pointer;
+  background-color: rgba(127, 192, 230, 0.8);
+  box-shadow: 4px 3px 19px 0px rgba(0,0,0,0.3)
+}
+
+.button_class:active {
+  opacity: 0.8;
+  box-shadow: none;
 }
