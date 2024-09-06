@@ -5,6 +5,13 @@
 * Browsers: last 2 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -16,69 +23,79 @@ p {
   margin: 15px;
 }
 
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px;
+}
+
 h1 {
   text-align: center;
   font-family: roboto, sans-serif;
   font-weight: 200;
   font-size: 40px;
-  color: rgb(108, 106, 106);
+  color: rgb(233, 86, 99);
   margin-left: 35px;
 }
 
+#pokedex_heading {
+  margin: 0;
+}
+
 .pokedex_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;  
-  justify-content: center;
+  -webkit-box-pack: center;  
+      -ms-flex-pack: center;  
+          justify-content: center;
 }
 
-@media all and (max-width: 300px) {
-  .pokedex_container {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    .button_class {
-      width: 200px;
-      font-size: 15px;
-    }
-    h1 {
-      font-size: 25px;
-      margin-left: 30px;
-    }
-  }
-}
-
-.pokedex, li {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 90%;
-  max-width: 600px;
+.pokedex {
   list-style-type: none;
   padding: 0;
+  width: 500px;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .button_class {
-  width: 100%;
-  font-family: roboto, sans-serif;
-  font-weight: 200;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: 20px;
   font-size: 20px;
-  color: black;
-  border-style: none;
-  border-radius: 5px;
-  background-color: rgb(230, 232, 232);
-  margin-bottom: 10px;
-  padding: 15px;
-  text-align: left;
-  
-}
-
-.button_class:hover {
-  cursor: pointer;
-  background-color: rgba(230, 232, 232, 0.665);
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(233, 86, 99);
+  border-radius: 10px;
+  color: rgb(233, 86, 99);
+  padding: 20px;
+  background-color: white;
   -webkit-box-shadow: 4px 3px 19px 0px rgba(0,0,0,0.3);
           box-shadow: 4px 3px 19px 0px rgba(0,0,0,0.3)
 }
 
-.button_class:active {
+.button_class:hover {
+  cursor: pointer;
   opacity: 0.8;
+  background-color: rgb(233, 86, 99);
+  color: white;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.button_class:active {
+  background-color: rgb(199, 72, 83);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -115,6 +132,10 @@ h1 {
   width: 100%;
   max-width: 700px;
   text-align: center;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: rgb(233, 86, 99);
+  border-radius: 10px;
 }
 
 .modal-close {
@@ -122,16 +143,17 @@ h1 {
   -webkit-appearance: none;
   border: 0;
   background: none;
-  color: #777;
+  color: rgb(233, 86, 99);
   text-decoration: underline;
 }
 
 .modal-close:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .modal-close:active {
-  color: #7777779d;
+  color: rgb(199, 72, 83);
 }
 
 .modal h1 {
