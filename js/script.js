@@ -64,12 +64,12 @@ let pokemonRepository = (function () {
     },
 
     showModal: function (name, height, imageUrl) {
-      let modalTitle = document.querySelector(".modal-title");
-      let modalBody = document.querySelector(".modal-body");
       let modalHeader = document.querySelector(".modal-header");
+      let modalBody = document.querySelector(".modal-body");
+      let closeButton = document.querySelector(".close");
       
       // Delete initial content from model 
-      modalTitle.innerHTML = '';
+      modalHeader.innerHTML = '';
       modalBody.innerHTML = '';
     
       let nameElement = document.createElement("h1");
@@ -82,9 +82,10 @@ let pokemonRepository = (function () {
       imageElement.src = imageUrl;
       
       // Appending content to modal
-      modalTitle.appendChild(nameElement);
-      modalBody.appendChild(heightElement);
-      modalBody.appendChild(imageElement);
+      modalHeader.append(nameElement);
+      modalHeader.append(closeButton);
+      modalBody.append(heightElement);
+      modalBody.append(imageElement);
     }
   };
 })();
