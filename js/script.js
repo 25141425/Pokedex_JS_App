@@ -84,9 +84,9 @@ let pokemonRepository = (function () {
       // Appending content to modal
       modalHeader.append(nameElement);
       modalHeader.append(closeButton);
-      modalBody.append(heightElement);
       modalBody.append(imageElement);
-    }
+      modalBody.append(heightElement);
+     }
   };
 })();
 
