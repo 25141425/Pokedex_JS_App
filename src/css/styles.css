@@ -12,6 +12,13 @@
 * Browsers: last 2 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
 body {
   margin: 60px;
 }
@@ -37,10 +44,14 @@ h1 {
 .pokedex_container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;  
-  -webkit-box-pack: center;  
-      -ms-flex-pack: center;  
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
           justify-content: center;
+  
+  
 }
 
 .btn {

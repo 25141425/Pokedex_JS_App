@@ -12,12 +12,16 @@ let pokemonRepository = (function () {
       return pokemonList;
     },
     addListItem: function(pokemon) {
-      let pokedex = document.querySelector(".list-group");
-      let listItem = document.createElement("li");
-      listItem.classList.add("list-group-item", "border-0");
+      let pokedex = document.querySelector(".pokedex_container");
+      let listItem = document.createElement("div");
+      listItem.style.display = "flex";
+      listItem.style.width = "400px";
+      listItem.style.height = "100px";
+      listItem.classList.add("border-0");
       let button = document.createElement("button");
       button.innerText = pokemon.name;
-      button.classList.add("btn", "btn-outline-danger", "btn-block");
+      button.classList.add("btn", "btn-outline-danger");
+      button.style.margin = "10px";
       button.setAttribute("data-toggle", "modal");
       button.setAttribute("data-target", "#modal-container");
       
